@@ -7,12 +7,12 @@ import View2 from './View2/View2.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {tasks: [{id:1, name:'Task1'}]};
-    this.handleNameChange = this.handleNameChange.bind(this);
+    this.state = {foo: 'bar'};
+    this.handleFooChange = this.handleFooChange.bind(this);
   }
 
-  handleNameChange(name) {
-    this.setState({tasks: [{id:1, name}]});
+  handleFooChange(newVal) {
+    this.setState({foo: newVal});
   }
 
   render() {
@@ -20,8 +20,8 @@ class App extends Component {
       <Router>
         <div>
           <main>
-            <Route exact path="/"  render={(props) => <View1 tasks={this.state.tasks} onNameChange={this.handleNameChange} {...props}/>}/>
-            <Route path="/view2/:id" render={(props) => <View2 tasks={this.state.tasks} onNameChange={this.handleNameChange} {...props}/>}/>
+            <Route exact path="/"  render={(props) => <View1 foo={this.state.foo} onFooChange={this.handleFooChange} {...props}/>}/>
+            <Route path="/view2/:id" render={(props) => <View2 foo={this.state.foo} onFooChange={this.handleFooChange} {...props}/>}/>
           </main>
         </div>
       </Router>

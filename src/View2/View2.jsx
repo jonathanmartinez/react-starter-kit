@@ -11,7 +11,7 @@ export default class View2 extends Component {
     return (
       <div>
         <p>Hello from View2</p>
-        <p>{this.props.tasks[0].name}</p>
+        <p>Foo: {this.props.foo}</p>
         <p>Param ID: {this.props.match.params.id}</p>
         <Link to="/">Go to View1</Link>
       </div>

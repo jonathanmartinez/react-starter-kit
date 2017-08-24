@@ -8,16 +8,16 @@ export default class View1 extends Component {
   }
 
   handleChange(e) {
-    this.props.onNameChange(e.target.value);
+    this.props.onFooChange(e.target.value);
   }
 
   render() {
-    const tasks = this.props.tasks;
+    const foo = this.props.foo;
     return (
       <div>
         <p>Hello from View1</p>
-        <p>{this.props.tasks[0].name}</p>
-        <input value={tasks[0].name} onChange={this.handleChange} />
+        <p>Foo: {this.props.foo}</p>
+        <input value={foo} onChange={this.handleChange} />
         <Link to="/View2/123">Go to View2</Link>
       </div>
     );
